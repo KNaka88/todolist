@@ -25,7 +25,7 @@ $(function(){
 
     $("#show-lists").show();
     $("#show-lists ul").append("<span class='todolists' id='" + newToDoList.whatToDo + "''><li>"+ newToDoList.whatToDo
-    + "</li></span>"  + "<input type='checkbox' name='list-item' id='" + newToDoList.whatToDo + "check" + "'>");
+    + "</li>"  + "<input type='checkbox' name='list-item'></span>");
 
     whatToDoArray.push(newToDoList.whatToDo);
     alert(whatToDoArray);
@@ -49,12 +49,10 @@ $(function(){
   $("#complete").click(function(){
     for(var i=0; i<whatToDoArray.length; i++){
       console.log(whatToDoArray[i]);
-        if( $("#" + whatToDoArray[i] + "check").is(':checked')   ){
+        if( $("#" + whatToDoArray[i] + " input:checkbox[name=list-item]" ).is(':checked')   ){
           alert("I am checked");
           //$(newToDoList.whatToDo[i]).remove();
           $("#" + whatToDoArray[i]).remove();
-          $("#" + whatToDoArray[i] + "check").remove();
-
         }
       };
   });
